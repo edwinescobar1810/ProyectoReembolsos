@@ -1,0 +1,113 @@
+<p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>App Reembolsos</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" matTooltip="Buscar" aria-label="">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" matTooltip="Usuario" aria-label="">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" matTooltip="Mensajes" aria-label="">
+        <mat-icon>mark_chat_unread</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" matTooltip="Configuración" aria-label="">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+      <p>Edwin Steven Escobar Saba</p>
+    </mat-drawer>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Bienvenido de nuevo, Edwin Escobar!</mat-card-title>
+        <mat-card-subtitle>Administrador del sitio</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card><br>
+    <mat-tab-group mat-stretch-tabs="false" animationDuration="0ms" mat-align-tabs="start">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">monitoring</mat-icon>
+          Dashboard
+        </ng-template><br>
+        <mat-grid-list cols="4" rowHeight="3:2">
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Total de reembolsos</mat-card-title>
+                <mat-card-subtitle>
+                  <h1>21</h1>
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Reembolsos pendientes</mat-card-title>
+                <mat-card-subtitle>
+                  <h1>17</h1>
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Reembolsos anulados</mat-card-title>
+                <mat-card-subtitle>
+                  <h1>24</h1>
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Reembolsos confirmados</mat-card-title>
+                <mat-card-subtitle>
+                  <h1>38</h1>
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">storefront</mat-icon>
+          Tiendas
+        </ng-template>
+        Tiendas
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">group</mat-icon>
+          Usuarios
+        </ng-template>
+        Usuarios
+      </mat-tab>
+    </mat-tab-group>
+  </mat-drawer-container>
