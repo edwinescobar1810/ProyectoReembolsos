@@ -1,0 +1,34 @@
+mat-card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  padding: 50px;
+  z-index: 2;
+  position: relative;
+  top: 20%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+section {
+  background-color: rgb(228, 228, 228);
+  width: 100%;
+  height: 100%;
+}
+
+mat-card-title {
+  font-size: 30px;
+}
+
+mat-card-subtitle {
+  font-size: 15px;
+}

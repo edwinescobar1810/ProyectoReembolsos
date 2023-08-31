@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-app.component.css']
 })
 export class LoginAppComponent {
-
+  checked = false;
+  indeterminate = false;
+  labelPosition: 'before' | 'after' = 'after';
+  disabled = false;
 }

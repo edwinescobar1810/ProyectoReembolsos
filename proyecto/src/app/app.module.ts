@@ -17,13 +17,27 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NgFor } from '@angular/common';
 import { LoginAppComponent } from './login-app/login-app.component';
 import { HomeComponent } from './home/home.component';
-
+import { TiendasComponent } from './tiendas/tiendas.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ReembolsosComponent } from './reembolsos/reembolsos.component';
+import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginAppComponent,
-    HomeComponent
+    HomeComponent,
+    TiendasComponent,
+    UsuariosComponent,
+    ReembolsosComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +53,19 @@ import { HomeComponent } from './home/home.component';
     MatTooltipModule,
     MatTabsModule,
     MatGridListModule,
-    NgFor
+    NgFor,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatTableModule, 
+    MatSortModule, 
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    FormsModule
 
   ],
   providers: [],
@@ -48,4 +74,6 @@ import { HomeComponent } from './home/home.component';
 
 
 export class AppModule {
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 }
+

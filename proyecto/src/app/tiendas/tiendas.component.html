@@ -1,0 +1,89 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>App Reembolsos</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" matTooltip="Buscar" aria-label="">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" matTooltip="Usuario" aria-label="">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" matTooltip="Mensajes" aria-label="">
+      <mat-icon>mark_chat_unread</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" matTooltip="Configuración" aria-label="">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <mat-selection-list #shoes [multiple]="false">
+      <mat-list-item role="listitem" routerLink="/home">Dashboard</mat-list-item>
+      <mat-list-item role="listitem" routerLinkActive="active" routerLink="/tiendas">Tiendas</mat-list-item>
+      <mat-list-item role="listitem" routerLink="/usuarios">Usuarios</mat-list-item>
+      <mat-list-item role="listitem" routerLink="/reembolsos">Reembolsos</mat-list-item>
+      <mat-list-item role="listitem" routerLink="solicitudes">Solicitudes</mat-list-item>
+    </mat-selection-list>
+  </mat-drawer>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Bienvenido de nuevo, Edwin Escobar!</mat-card-title>
+      <mat-card-subtitle>Administrador del sitio</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card><br>
+  <mat-tab-group mat-stretch-tabs="false" animationDuration="0ms" mat-align-tabs="start">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">storefront</mat-icon>
+        Tiendas
+      </ng-template>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Tienda Titan" #input>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="progress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+            <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="fruit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+            <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-drawer-container>
