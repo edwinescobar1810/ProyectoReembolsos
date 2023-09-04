@@ -58,5 +58,15 @@ mat-list-item {
 }
 
 mat-list-item.active {
-  background-color: #3f51b526;
+  background-color: #fc9700;
+}
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
 }
