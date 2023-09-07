@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { AddUsuarioComponent } from '../add-usuario/add-usuario.component';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface UserData {
   id: string;
@@ -95,10 +97,17 @@ export class UsuariosComponent {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 10245760587));
-
     this.dataSource = new MatTableDataSource(users);
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddUsuarioComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   ngAfterViewInit() {

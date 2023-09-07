@@ -1,0 +1,73 @@
+<h2 mat-dialog-title>Agregar Usuario</h2>
+<mat-dialog-content class="mat-typography">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="" disabled="" value="512">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombres</mat-label>
+      <input matInput placeholder="">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellidos</mat-label>
+      <input matInput placeholder="">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Cedula</mat-label>
+      <input type="number" matInput placeholder="">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Rol</mat-label>
+      <mat-select>
+        <mat-option value="one">Administrador</mat-option>
+        <mat-option value="two">Lider de tienda</mat-option>
+        <mat-option value="tree">Backoffice</mat-option>
+        <mat-option value="tree">Colaborador</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Area</mat-label>
+      <mat-select>
+        <mat-option value="one">Administrativa</mat-option>
+        <mat-option value="two">Comercial</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Pais</mat-label>
+      <mat-select>
+        <mat-option value="one">Colombia</mat-option>
+        <mat-option value="two">Brasil</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Correo electronico</mat-label>
+      <input type="email" matInput placeholder="">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Celular</mat-label>
+      <input type="number" matInput placeholder="">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-slide-toggle [(ngModel)]="isChecked">Usuario activo: {{isChecked}}</mat-slide-toggle>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Agregar</button>
+</mat-dialog-actions>

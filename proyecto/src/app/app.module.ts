@@ -29,6 +29,10 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import {FormsModule} from '@angular/forms';
     HomeComponent,
     TiendasComponent,
     UsuariosComponent,
-    ReembolsosComponent
+    ReembolsosComponent,
+    AddUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,9 @@ import {FormsModule} from '@angular/forms';
     MatPaginatorModule,
     MatCheckboxModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatSelectModule,
 
   ],
   providers: [],
