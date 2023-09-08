@@ -32,6 +32,7 @@ import {FormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 import {MatSelectModule} from '@angular/material/select';
+import { OpenDeleteComponent } from './open-delete/open-delete.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     TiendasComponent,
     UsuariosComponent,
     ReembolsosComponent,
-    AddUsuarioComponent
+    AddUsuarioComponent,
+    OpenDeleteComponent
   ],
   imports: [
     BrowserModule,

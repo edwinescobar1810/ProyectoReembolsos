@@ -45,24 +45,28 @@
         Usuarios
       </ng-template>
       <br>
-      <mat-grid-list cols="2" rowHeight="7:1">
+      <mat-grid-list cols="2" rowHeight="13px:2px">
+       
+        
+
         <mat-grid-tile>
           <button mat-mini-fab color="accent" (click)="openDialog()" matTooltip="Nuevo" aria-label="add">
             <mat-icon><span class="material-symbols-outlined">
                 person_add
               </span>>nuevo</mat-icon>
           </button>
-          <button mat-mini-fab color="primary" matTooltip="Actualizar" aria-label="refresh">
+          <button mat-mini-fab color="primary" matTooltip="Editar" aria-label="refresh">
             <mat-icon><span class="material-symbols-outlined">
-                refresh
+                edit
               </span>actualizar</mat-icon>
           </button>
-          <button mat-mini-fab color="warn" matTooltip="Eliminar" aria-label="delete">
+          <button mat-mini-fab color="warn" (click)="openDelete()" matTooltip="Eliminar" aria-label="delete">
             <mat-icon><span class="material-symbols-outlined">
                 delete
               </span>eliminar</mat-icon>
           </button>
         </mat-grid-tile>
+
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Buscar</mat-label>

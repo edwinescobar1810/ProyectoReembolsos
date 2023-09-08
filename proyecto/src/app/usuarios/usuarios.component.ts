@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddUsuarioComponent } from '../add-usuario/add-usuario.component';
 import { MatDialog } from '@angular/material/dialog';
+import { OpenDeleteComponent } from '../open-delete/open-delete.component';
 
 export interface UserData {
   id: string;
@@ -104,6 +105,14 @@ export class UsuariosComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(AddUsuarioComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDelete() {
+    const dialogRef = this.dialog.open(OpenDeleteComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
