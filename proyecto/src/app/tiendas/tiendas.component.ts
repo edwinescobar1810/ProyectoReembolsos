@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AddTiendaComponent } from '../add-tienda/add-tienda.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 export interface PeriodicElement {
   name: string;
@@ -54,6 +57,18 @@ export class TiendasComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  constructor(public dialog: MatDialog){
+
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(AddTiendaComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
 
 

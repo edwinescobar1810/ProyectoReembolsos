@@ -6,15 +6,17 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReembolsosComponent } from './reembolsos/reembolsos.component';
 import { TiendasComponent } from './tiendas/tiendas.component';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
+import { AddTiendaComponent } from './add-tienda/add-tienda.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginAppComponent },
   { path: 'home', component: HomeComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'tiendas', component: TiendasComponent },
   { path: 'reembolsos', component: ReembolsosComponent },
   { path: 'add-usuario', component: AddUsuarioComponent },
+  { path: 'add-tienda', component: AddTiendaComponent },
 ];
 
 @NgModule({
