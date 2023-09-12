@@ -43,11 +43,32 @@
         Tiendas
       </ng-template>
       <br>
-      <mat-form-field appearance="outline">
-        <mat-label>Buscar</mat-label>
-        <input matInput placeholder="Ej: Tienda Titan" #input>
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+      <mat-grid-list cols="2" rowHeight="7:1">
+        <mat-grid-tile>
+          <button mat-mini-fab color="accent" (click)="openDialog()" matTooltip="Nuevo" aria-label="add">
+            <mat-icon><span class="material-symbols-outlined">
+                person_add
+              </span>>nuevo</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary" matTooltip="Actualizar" aria-label="refresh">
+            <mat-icon><span class="material-symbols-outlined">
+                refresh
+              </span>actualizar</mat-icon>
+          </button>
+          <button mat-mini-fab color="warn" matTooltip="Eliminar" aria-label="delete">
+            <mat-icon><span class="material-symbols-outlined">
+                delete
+              </span>eliminar</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput placeholder="Ej: Tienda Titan" #input>
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
           <!-- Position Column -->
