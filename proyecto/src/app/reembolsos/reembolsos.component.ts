@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OpenMiperfilComponent } from '../open-miperfil/open-miperfil.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-reembolsos',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ReembolsosComponent {
 
+  constructor(public dialog: MatDialog) { }
+
+  openMiperfil() {
+    this.dialog.open(OpenMiperfilComponent);
+  }
 }

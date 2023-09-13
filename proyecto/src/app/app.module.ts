@@ -31,13 +31,17 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
-<<<<<<< HEAD
-import {MatSelectModule} from '@angular/material/select';
-import { OpenDeleteComponent } from './open-delete/open-delete.component';
-=======
 import { MatSelectModule } from '@angular/material/select';
 import { AddTiendaComponent } from './add-tienda/add-tienda.component';
->>>>>>> 8c121496851768f3081c3b905481c6c520dd911a
+import {MatMenuModule} from '@angular/material/menu';
+import { OpenMiperfilComponent } from './open-miperfil/open-miperfil.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { AlertloginComponent } from './alertlogin/alertlogin.component';
 
 
 @NgModule({
@@ -49,11 +53,10 @@ import { AddTiendaComponent } from './add-tienda/add-tienda.component';
     UsuariosComponent,
     ReembolsosComponent,
     AddUsuarioComponent,
-<<<<<<< HEAD
-    OpenDeleteComponent
-=======
-    AddTiendaComponent
->>>>>>> 8c121496851768f3081c3b905481c6c520dd911a
+    AddTiendaComponent,
+    OpenMiperfilComponent,
+    RegisterComponent,
+    AlertloginComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +87,12 @@ import { AddTiendaComponent } from './add-tienda/add-tienda.component';
     FormsModule,
     MatDialogModule,
     MatSelectModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
 
   ],
   providers: [],

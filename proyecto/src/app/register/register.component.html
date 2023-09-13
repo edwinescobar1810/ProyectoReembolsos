@@ -1,7 +1,7 @@
 <body>
     <mat-card>
-        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-            <mat-card-title>Iniciar Sesión</mat-card-title>
+        <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+            <mat-card-title>Registro de usuarios</mat-card-title>
             <mat-card-subtitle>Oboticário</mat-card-subtitle>
             <br><br>
             <mat-form-field appearance="outline">
@@ -14,9 +14,7 @@
                 <input type="password" matInput placeholder="" value="" required formControlName="password">
                 <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
-            <button type="submit" mat-raised-button color="primary">Iniciar Sesión</button>
-            <br><br>
-            <button mat-stroked-button  color="primary" (click)="onClick()">Continuar con Google</button>
+            <button type="submit" mat-raised-button color="primary">Registrarme</button>
         </form>
     </mat-card>
 </body>

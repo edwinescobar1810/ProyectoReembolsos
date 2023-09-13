@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AddUsuarioComponent } from '../add-usuario/add-usuario.component';
 import { MatDialog } from '@angular/material/dialog';
 import { OpenDeleteComponent } from '../open-delete/open-delete.component';
+import { OpenMiperfilComponent } from '../open-miperfil/open-miperfil.component';
 
 export interface UserData {
   id: string;
@@ -117,6 +118,10 @@ export class UsuariosComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  openMiperfil() {
+    this.dialog.open(OpenMiperfilComponent);
   }
 
   ngAfterViewInit() {

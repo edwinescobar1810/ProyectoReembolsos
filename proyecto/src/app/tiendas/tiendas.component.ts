@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddTiendaComponent } from '../add-tienda/add-tienda.component';
 import { MatDialog } from '@angular/material/dialog';
+import { OpenMiperfilComponent } from '../open-miperfil/open-miperfil.component';
 
 
 export interface PeriodicElement {
@@ -58,8 +59,7 @@ export class TiendasComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(public dialog: MatDialog){
-
+  constructor(public dialog: MatDialog) {
   }
   openDialog() {
     const dialogRef = this.dialog.open(AddTiendaComponent);
@@ -67,6 +67,10 @@ export class TiendasComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  openMiperfil() {
+    this.dialog.open(OpenMiperfilComponent);
   }
 
 }

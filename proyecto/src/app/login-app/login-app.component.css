@@ -13,7 +13,6 @@ mat-card {
 }
 
 mat-form-field {
-  
   width: 100%;
   backdrop-filter: blur(5px);
 }
@@ -22,7 +21,6 @@ button {
   width: 100%;
   border-radius: 20px;
   padding: 20px;
-  background-color: #007E78;
 }
 
 body {

@@ -14,9 +14,19 @@
     <button mat-icon-button class="example-icon" matTooltip="Mensajes" aria-label="">
       <mat-icon>mark_chat_unread</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" matTooltip="Configuración" aria-label="">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <mat-icon>more_vert</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openMiperfil()">
+        <mat-icon>account_circle</mat-icon>
+        <span>Mi Perfil</span>
+      </button>
+      <button mat-menu-item routerLink="/login">
+        <mat-icon>logout</mat-icon>
+        <span>Salir</span>
+      </button>
+    </mat-menu>
   </mat-toolbar>
 </p>
 <mat-drawer-container class="example-container" autosize>
