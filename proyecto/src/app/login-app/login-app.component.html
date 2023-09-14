@@ -2,7 +2,7 @@
     <mat-card>
         <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
             <mat-card-title>Iniciar Sesión</mat-card-title>
-            <mat-card-subtitle>Oboticário</mat-card-subtitle>
+            <mat-card-subtitle>oBoticário | Reembolsos</mat-card-subtitle>
             <br><br>
             <mat-form-field appearance="outline">
                 <mat-label>Correo electrónico</mat-label>
@@ -16,7 +16,7 @@
             </mat-form-field>
             <button type="submit" mat-raised-button color="primary">Iniciar Sesión</button>
             <br><br>
-            <button mat-stroked-button  color="primary" (click)="onClick()">Continuar con Google</button>
+            <button mat-stroked-button  color="accent" (click)="onClick()">Continuar con Google</button>
         </form>
     </mat-card>
 </body>

@@ -44,6 +44,8 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlertloginComponent } from './alertlogin/alertlogin.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -95,6 +97,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatSnackBarModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatStepperModule,
     
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
@@ -107,5 +110,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
 export class AppModule {
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
+  
 }
 

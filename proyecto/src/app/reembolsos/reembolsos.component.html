@@ -18,10 +18,10 @@
             <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="openMiperfil()">
+            <!-- <button mat-menu-item (click)="openMiperfil()"> -->
                 <mat-icon>account_circle</mat-icon>
                 <span>Mi Perfil</span>
-            </button>
+            <!-- </button> -->
             <button mat-menu-item routerLink="/login">
                 <mat-icon>logout</mat-icon>
                 <span>Salir</span>
@@ -48,13 +48,173 @@
     </mat-card><br>
     <mat-tab-group mat-stretch-tabs="false" animationDuration="0ms" mat-align-tabs="start">
         <mat-tab>
+            
             <ng-template mat-tab-label>
                 <mat-icon class="example-tab-icon">currency_exchange</mat-icon>
                 Reembolsos
             </ng-template>
-            <mat-card>
+            
+            <mat-card> 
+
+               <h3>Sigue estos 3 simples pasos</h3>
+                        
+
                 <p>
-                    <mat-form-field>
+                    <mat-stepper #stepper>
+                        <mat-step [stepControl]="firstFormGroup" errorMessage="*Todos los campos son obligatorios">
+                          <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Registra el reembolso</ng-template>
+                            <mat-form-field>
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-label>Fecha del reembolso</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="firstCtrl" required>
+                                
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>NIT</mat-label>
+                                <input type="number" matInput placeholder="" formControlName="firstCtrl" required>
+                                <mat-icon matSuffix>apartment</mat-icon>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" disabled="" value="">
+                                <mat-label>Beneficiario</mat-label>
+                                <input matInput placeholder="" formControlName="firstCtrl" required>
+                                <mat-icon matSuffix>account_circle</mat-icon>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" >
+                                <mat-label>Centro de costo</mat-label>
+                                <mat-select formControlName="firstCtrl" required>
+                                    <mat-option value="1">1001 | Titan Plaza</mat-option>
+                                    <mat-option value="2">1002 | Hayuelos</mat-option>
+                                    <mat-option value="3">1003 | Centro Chia</mat-option>
+                                    <mat-option value="4">1004 | Centro Mayor</mat-option>
+                                    <mat-option value="5">1006 | Santa Fe</mat-option>
+                                    <mat-option value="6">1010 | Andino</mat-option>
+                                    <mat-option value="7">1011 | Galerias</mat-option>
+                                    <mat-option value="8">1012 | Salitre Plaza</mat-option>
+                                    <mat-option value="9">1013 | Plaza de las Americas</mat-option>
+                                    <mat-option value="10">1014 | Fontanar</mat-option>
+                                    <mat-option value="11">1021 | Viva Envigado</mat-option>
+                                    <mat-option value="12">1022 | Lojas BackOfiice</mat-option>
+                                    <mat-option value="13">1024 | Gran Estación</mat-option>
+                                    <mat-option value="14">1025 | Colina</mat-option>
+                                    <mat-option value="15">1026 | Caracoli</mat-option>
+                                    <mat-option value="16">1027 | Tesoro</mat-option>
+                                    <mat-option value="17">1028 | Unicentro</mat-option>
+                                    <mat-option value="18">1029 | Multiplaza</mat-option>
+                                    <mat-option value="19">1030 | CC plaza jardin cali</mat-option>
+                                    <mat-option value="20">1031 | Cartagena serrezuela</mat-option>
+                                    <mat-option value="21">1032 | Ibague la estación</mat-option>
+                                    <mat-option value="22">1033 | Barranquilla buenavista</mat-option>
+                                    <mat-option value="23">1034 | Cucuta plaza jardin</mat-option>
+                                    <mat-option value="24">1035 | Oboticario eventos</mat-option>
+                                    <mat-option value="25">1036 | Unicentro yopal</mat-option>
+                                    <mat-option value="26">1037 | Viva barranquilla</mat-option>
+                                    <mat-option value="27">1038 | Unicentro kiosko</mat-option>
+                                    <mat-option value="28">1039 | Kiosko Diver plaza</mat-option>
+                                    <mat-option value="29">1040 | Diver plaza</mat-option>
+                                    <mat-option value="30">1041 | Jardin Plaza Cali</mat-option>
+                                    <mat-option value="31">1042 | Plaza imperial</mat-option>
+                                    <mat-option value="32">1043 | Mall Plaza </mat-option>
+                                    <mat-option value="33">1044 | Plaza claro</mat-option>
+                                    <mat-option value="34">1045 | Viva Barranquilla</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                    
+                                <button mat-mini-fab matStepperNext color="primary"matTooltip="Siguiente"><mat-icon>navigate_next</mat-icon></button>
+                              </div>
+                          </form>
+                        </mat-step>
+                        <mat-step [stepControl]="secondFormGroup" errorMessage="*Todos los campos son obligatorios">
+                          <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Carga tu factura</ng-template>
+                            <p>
+                                <mat-form-field>
+                                    <mat-label>Fecha de la factura</mat-label>
+                                    <input matInput [matDatepicker]="pickers" formControlName="secondCtrl">
+                                    <mat-hint>MM/DD/YYYY</mat-hint>
+                                    <mat-datepicker-toggle matIconSuffix [for]="pickers"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickers></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" value="">
+                                    <mat-label>NIT</mat-label>
+                                    <input type="number" matInput placeholder="" formControlName="secondCtrl">
+                                    <mat-icon matSuffix>apartment</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Concepto de gasto</mat-label>
+                                    <mat-select formControlName="secondCtrl">
+                                        <mat-option value="one">Auxilio de transporte</mat-option>
+                                        <mat-option value="two">Impresión Ploter</mat-option>
+                                        <mat-option value="tree">Compra refrigerio</mat-option>
+                                        <mat-option value="tree">Compra de vasos</mat-option>
+                                        <mat-option value="tree">Cambio de sencillo</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" value="">
+                                    <mat-label>Descripción</mat-label>
+                                    <input type="text" matInput placeholder="" formControlName="secondCtrl">
+                                    <mat-icon matSuffix>attach_money</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" value="">
+                                    <mat-label>Valor en pesos</mat-label>
+                                    <input type="number" matInput placeholder="" formControlName="secondCtrl">
+                                    <mat-icon matSuffix>attach_money</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" value="">
+                                    <mat-label>IVA</mat-label>
+                                    <input type="number" matInput placeholder="" formControlName="secondCtrl">
+                                    <mat-icon matSuffix>attach_money</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill"   >
+                                    <mat-label>Total</mat-label>
+                                    <input type="number" matInput placeholder="" disabled="" value="">
+                                    <mat-icon matSuffix>payments</mat-icon>
+                                </mat-form-field>
+                            </p>
+                            
+                           
+                                <h4> Adjunte su comprobante</h4>
+                           
+                            
+                            <p>
+                                <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+                                <span class="btn btn-primary btn-file">
+                                    Subir archivo <input type="file">
+                                </span>
+    
+
+                                
+                            </p>
+                       
+                        
+                            <div>
+                              
+                              <button mat-mini-fab matStepperPrevious color="warn" matTooltip="Anterior"><mat-icon>navigate_before</mat-icon></button>
+                              <button mat-mini-fab matStepperNext color="primary" matTooltip="Siguiente"><mat-icon>navigate_next</mat-icon></button>
+                            </div>
+                          </form>
+                        </mat-step>
+                        <mat-step>
+                          <ng-template matStepLabel>Envía tu solicitud</ng-template>
+                          
+                            <h3> ¿Todo listo para cargar tu reembolso? </h3>
+                          
+                          <div align="center">
+                            <button mat-mini-fab matStepperPrevious color="accent" matTooltip="Anterior"><mat-icon>navigate_before</mat-icon></button>
+                            <button mat-mini-fab (click)="stepper.reset()" color="warn" matTooltip="Restablecer"><mat-icon>restart_alt</mat-icon></button>
+                            <button mat-mini-fab color="primary" matTooltip="Listo"><mat-icon>done</mat-icon></button>
+
+                          </div>
+                        </mat-step>
+                      </mat-stepper>
+                      
+                      
+                    <!-- <mat-form-field>
                         <mat-label>Fecha</mat-label>
                         <input matInput [matDatepicker]="picker">
                         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -163,8 +323,21 @@
                 <mat-card-actions align="end">
                     <button mat-stroked-button>Cancelar</button>
                     <button mat-raised-button color="primary">Enviar</button>
-                </mat-card-actions>
+                </mat-card-actions> -->
             </mat-card>
         </mat-tab>
     </mat-tab-group>
-</mat-drawer-container>
+</mat-drawer-container> 
+
+<footer>
+    <mat-toolbar color="primary">
+        <footer class="pmd-footer bg-dark pmd-footer-dark">
+            <div class="container">
+                <div class="pmd-site-info text-center">
+                    © 2023 |<a href="https://www.oboticario.com.co/pages/historia-boticario" target="_blank" rel="noopener noreferrer"><strong> oBoticário</strong></a> | TI
+                </div>
+            </div>
+        </footer>
+       
+    </mat-toolbar>
+  </footer>

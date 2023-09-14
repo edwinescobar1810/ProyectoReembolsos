@@ -3,10 +3,11 @@ mat-form-field{
 }
 
 h2{
-    background-color:#007E78;
-}
-
-button{
-    background-color:#007E78;
+    background-color: blueviolet; 
     color: white;
-}
+ }
+ 
+ button{
+     background-color: blueviolet; 
+     color: white;
+ }
