@@ -42,6 +42,9 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlertloginComponent } from './alertlogin/alertlogin.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 @NgModule({
@@ -90,6 +93,8 @@ import { AlertloginComponent } from './alertlogin/alertlogin.component';
     MatMenuModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
