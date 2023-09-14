@@ -61,3 +61,16 @@ mat-list-item.active {
     background-color: #3f51b526;
     color: #3f51b5;
 }
+mat-form-field {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    display: flex;
+  justify-content: center;
+}
+
+input{
+    
+}

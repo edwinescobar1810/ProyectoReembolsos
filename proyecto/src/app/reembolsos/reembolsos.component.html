@@ -52,6 +52,80 @@
                 <mat-icon class="example-tab-icon">currency_exchange</mat-icon>
                 Reembolsos
             </ng-template>
+
+            <p>
+                <mat-form-field appearance="fill" value="830037946-3">
+                    <mat-label>NIT</mat-label>
+                    <input type="number" matInput placeholder="">
+                    <mat-icon matSuffix>apartment</mat-icon>
+                  </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="fill" disabled="" value="Panamericana y Paperlería SA">
+                    <mat-label>Beneficiario</mat-label> 
+                    <input matInput placeholder="">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                  </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Concepto de gasto</mat-label>
+                    <mat-select>
+                      <mat-option value="one">Auxilio de transporte</mat-option>
+                      <mat-option value="two">Impresión Ploter</mat-option>
+                      <mat-option value="tree">Compra refrigerio</mat-option>
+                      <mat-option value="tree">Compra de vasos</mat-option>
+                      <mat-option value="tree">Cambio de sencillo</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Centro de costo</mat-label>
+                    <mat-select>
+                      <mat-option value="one">1001</mat-option>
+                      <mat-option value="two">1002</mat-option>
+                      <mat-option value="tree">1003</mat-option>
+                      <mat-option value="four">1004</mat-option>
+                      <mat-option value="five">1005</mat-option>
+                      <mat-option value="six">1006</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+              </p>
+              <p>
+                <mat-form-field appearance="fill" value="">
+                    <mat-label>Valor en pesos</mat-label>
+                    <input type="number" matInput placeholder="">
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                  </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="fill" value="">
+                    <mat-label>IVA</mat-label>
+                    <input type="number" matInput placeholder="">
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                  </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field appearance="fill" disabled="" value="">
+                    <mat-label>Total</mat-label>
+                    <input type="number" matInput placeholder="">
+                    <mat-icon matSuffix>payments</mat-icon>
+                  </mat-form-field>
+              </p>
+              <p>
+                Adjunte su comprobante
+            </p>
+                <p>
+                    
+                    <input type="file" name="" accept="png, .jpeg, .jpg, pdf">
+
+                </p>
+             
+              
+              
         </mat-tab>
     </mat-tab-group>
 </mat-drawer-container>
