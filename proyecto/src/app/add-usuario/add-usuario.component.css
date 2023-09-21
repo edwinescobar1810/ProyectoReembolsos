@@ -2,12 +2,10 @@ mat-form-field{
     width: 100%;
 }
 
-h2{
-    background-color: blueviolet; 
-    color: white;
- }
- 
- button{
-     background-color: blueviolet; 
-     color: white;
- }
+ .example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  

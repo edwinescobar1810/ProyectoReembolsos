@@ -33,21 +33,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AddTiendaComponent } from './add-tienda/add-tienda.component';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { OpenMiperfilComponent } from './open-miperfil/open-miperfil.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertloginComponent } from './alertlogin/alertlogin.component';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatStepperModule} from '@angular/material/stepper';
-
-
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -98,7 +95,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatNativeDateModule,
     MatDatepickerModule,
     MatStepperModule,
-    
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
 
@@ -111,6 +108,6 @@ import {MatStepperModule} from '@angular/material/stepper';
 export class AppModule {
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 
-  
+
 }
 
